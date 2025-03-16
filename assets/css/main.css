@@ -1,0 +1,62 @@
+/* main.css */
+@import url("reset.css");
+@import url("base.css");
+@import url("header.css");
+@import url("hero.css");
+@import url("services.css");
+@import url("portfolio.css");
+@import url("contact.css");
+@import url("footer.css");
+@import url("responsive.css");
+
+/* Global Variables (if not defined in a separate file) */
+:root {
+  --primary-color: #000;
+  --secondary-color: #444;
+  --bg-light: #f9f9f9;
+  --bg-accent: #f1f1f1;
+  --font-color: #333;
+  --transition-speed: 0.3s;
+}
+
+/* Back to Top Button */
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--primary-color);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-speed), visibility var(--transition-speed);
+  z-index: 100;
+}
+#backToTop.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Reduce motion for users with motion sensitivity */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

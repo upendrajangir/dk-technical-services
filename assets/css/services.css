@@ -1,0 +1,36 @@
+/* services.css */
+.services {
+    background: var(--bg-light);
+    text-align: center;
+    animation: fadeIn 1.5s ease-in;
+  }
+  .services h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  .service-items {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .service {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform var(--transition-speed);
+  }
+  .service:hover {
+    transform: translateY(-5px);
+  }
+  .service img {
+    border-radius: 8px;
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+  }
+  .service h3 {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+  }
+  

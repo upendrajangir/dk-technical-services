@@ -1,0 +1,33 @@
+/* responsive.css */
+@media (min-width: 768px) {
+    .menu-toggle {
+      display: none;
+    }
+    nav {
+      position: static;
+      transform: none;
+      opacity: 1;
+      visibility: visible;
+    }
+    .nav-links {
+      flex-direction: row;
+    }
+    /* Use CSS Grid for 3 services per row */
+    .service-items {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .portfolio-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (min-width: 1024px) {
+    .portfolio-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .hero h1 {
+      font-size: 3rem;
+    }
+  }
+  

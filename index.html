@@ -2,360 +2,92 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- Essential SEO Meta Tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>D&K Technical Services</title>
+    <title>D&K Technical Services - Expert Technical Solutions in Dubai</title>
+    <meta
+      name="description"
+      content="D&K Technical Services offers expert solutions in flooring, lighting, stages & events, decking, ceiling, and gypsum work in Dubai. Transform your space with our professional services."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.dktechnical.services/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="D&K Technical Services - Expert Technical Solutions in Dubai"
+    />
+    <meta
+      property="og:description"
+      content="D&K Technical Services offers expert solutions in flooring, lighting, stages & events, decking, ceiling, and gypsum work in Dubai."
+    />
+    <meta
+      property="og:image"
+      content="https://www.dktechnical.services/assets/icons/logo.svg"
+    />
+    <meta property="og:url" content="https://www.dktechnical.services/" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="D&K Technical Services - Expert Technical Solutions in Dubai"
+    />
+    <meta
+      name="twitter:description"
+      content="D&K Technical Services offers expert solutions in flooring, lighting, stages & events, decking, ceiling, and gypsum work in Dubai."
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.dktechnical.services/assets/icons/logo.svg"
+    />
+
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="assets/ui/D&K.svg" />
+    <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg" />
+
     <!-- Google Fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <style>
-      /* CSS Variables for theming */
-      :root {
-        --primary-color: #000;
-        --secondary-color: #444;
-        --bg-light: #f9f9f9;
-        --bg-accent: #f1f1f1;
-        --font-color: #333;
-        --transition-speed: 0.3s;
-      }
 
-      /* Global Reset & Base Styles */
-      *,
-      *::before,
-      *::after {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      html {
-        scroll-behavior: smooth;
-      }
-      body {
-        font-family: "Montserrat", sans-serif;
-        color: var(--font-color);
-        line-height: 1.6;
-        overflow-x: hidden;
-      }
-      a {
-        text-decoration: none;
-        color: inherit;
-      }
-      img {
-        max-width: 100%;
-        display: block;
-      }
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 1rem;
-      }
+    <!-- Main CSS (Modularized) -->
+    <link rel="stylesheet" href="assets/css/main.css" />
 
-      /* Header & Navigation */
-      header {
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        background: linear-gradient(
-          90deg,
-          var(--primary-color),
-          var(--secondary-color)
-        );
-        color: #fff;
-        padding: 1rem 0;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        animation: fadeIn 1s ease-in;
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "D&K Technical Services",
+        "url": "https://www.dktechnical.services/",
+        "logo": "https://www.dktechnical.services/assets/icons/logo.svg",
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "telephone": "+971556312319",
+            "contactType": "customer service",
+            "areaServed": "AE"
+          }
+        ],
+        "sameAs": [
+          "https://www.facebook.com/dktechnicalservices",
+          "https://twitter.com/dktechnicalservices",
+          "https://www.instagram.com/dktechnicalservices"
+        ]
       }
-      header .container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-      .logo {
-        font-size: 1.7rem;
-        font-weight: 650;
-        cursor: pointer;
-      }
-      .logo:hover,
-      .logo:focus {
-        opacity: 0.8;
-      }
-      nav {
-        position: relative;
-      }
-      .nav-links {
-        list-style: none;
-        display: flex;
-        gap: 1.5rem;
-      }
-      .nav-links li a {
-        font-size: 1.2rem;
-        transition: color var(--transition-speed);
-      }
-      .nav-links li a:hover,
-      .nav-links li a:focus {
-        color: #ddd;
-      }
-      .menu-toggle {
-        background: none;
-        border: none;
-        color: #fff;
-        font-size: 1.5rem;
-        cursor: pointer;
-        display: block;
-      }
-
-      /* Mobile Navigation */
-      @media (max-width: 767px) {
-        nav {
-          position: absolute;
-          top: 100%;
-          right: 0;
-          background: var(--primary-color);
-          width: 200px;
-          transform: translateY(-20px);
-          opacity: 0;
-          visibility: hidden;
-          transition: opacity var(--transition-speed) ease,
-            transform var(--transition-speed) ease;
-        }
-        nav.active {
-          transform: translateY(0);
-          opacity: 1;
-          visibility: visible;
-        }
-        .nav-links {
-          flex-direction: column;
-          padding: 1rem;
-        }
-      }
-
-      /* Hero Section */
-      .hero {
-        position: relative;
-        height: 60vh;
-        background: url("https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80")
-          center center/cover no-repeat;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        animation: fadeIn 2s ease-in;
-      }
-      .hero::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.5);
-      }
-      .hero h1 {
-        position: relative;
-        color: #fff;
-        font-size: 2.5rem;
-        padding: 0.5rem 1rem;
-        border-radius: 5px;
-      }
-
-      /* Main Sections */
-      main {
-        /* Main content wrapper */
-      }
-      section {
-        padding: 2rem 0;
-      }
-
-      /* Services Section */
-      .services {
-        background: var(--bg-light);
-        text-align: center;
-        animation: fadeIn 1.5s ease-in;
-      }
-      .services h2 {
-        font-size: 2rem;
-        margin-bottom: 1.5rem;
-      }
-      .service-items {
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-      }
-      .service {
-        background: #fff;
-        padding: 1rem;
-        border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        transition: transform var(--transition-speed);
-      }
-      .service:hover {
-        transform: translateY(-5px);
-      }
-      .service img {
-        border-radius: 8px;
-        height: 200px;
-        object-fit: cover;
-        width: 100%;
-      }
-      .service h3 {
-        margin-top: 1rem;
-        font-size: 1.5rem;
-      }
-
-      /* Portfolio Section */
-      .portfolio {
-        text-align: center;
-        animation: fadeIn 1.5s ease-in;
-      }
-      .portfolio h2 {
-        font-size: 2rem;
-        margin-bottom: 1.5rem;
-      }
-      .portfolio-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 1rem;
-      }
-      .portfolio-grid img {
-        border-radius: 8px;
-        height: 200px;
-        object-fit: cover;
-        width: 100%;
-        transition: transform var(--transition-speed);
-      }
-      .portfolio-grid img:hover {
-        transform: scale(1.05);
-      }
-
-      /* Contact Section */
-      .contact {
-        background: var(--bg-accent);
-        text-align: center;
-        animation: fadeIn 1.5s ease-in;
-      }
-      .contact h2 {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-      }
-      .contact p {
-        margin-bottom: 1rem;
-      }
-      .contact a.button {
-        display: inline-block;
-        padding: 0.75rem 1.5rem;
-        background: var(--primary-color);
-        color: #fff;
-        border-radius: 5px;
-        transition: background var(--transition-speed);
-      }
-      .contact a.button:hover,
-      .contact a.button:focus {
-        background: var(--secondary-color);
-      }
-
-      /* WhatsApp Links Container */
-      .whatsapp-links {
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-        flex-wrap: wrap;
-      }
-
-      /* Footer */
-      footer {
-        background: var(--primary-color);
-        color: #fff;
-        text-align: center;
-        padding: 1rem 0;
-        animation: fadeIn 1s ease-in;
-      }
-
-      /* Back to Top Button */
-      #backToTop {
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        background: var(--primary-color);
-        color: #fff;
-        padding: 0.5rem 1rem;
-        border: none;
-        border-radius: 50px;
-        cursor: pointer;
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity var(--transition-speed),
-          visibility var(--transition-speed);
-        z-index: 100;
-      }
-      #backToTop.show {
-        opacity: 1;
-        visibility: visible;
-      }
-
-      /* Fade In Animation */
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      /* Reduce motion for users with motion sensitivity */
-      @media (prefers-reduced-motion: reduce) {
-        * {
-          animation-duration: 0.001ms !important;
-          animation-iteration-count: 1 !important;
-          transition-duration: 0.001ms !important;
-        }
-      }
-
-      /* Responsive Styles */
-      @media (min-width: 768px) {
-        .menu-toggle {
-          display: none;
-        }
-        nav {
-          position: static;
-          transform: none;
-          opacity: 1;
-          visibility: visible;
-        }
-        .nav-links {
-          flex-direction: row;
-        }
-        /* Use CSS Grid for 3 services per row */
-        .service-items {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 2rem;
-        }
-        .portfolio-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-      @media (min-width: 1024px) {
-        .portfolio-grid {
-          grid-template-columns: repeat(3, 1fr);
-        }
-        .hero h1 {
-          font-size: 3rem;
-        }
-      }
-    </style>
+    </script>
   </head>
   <body>
     <!-- Header -->
     <header>
       <div class="container">
-        <!-- Clickable logo to scroll to top -->
-        <a href="#hero" class="logo" tabindex="0">D&K Technical Services</a>
+        <!-- Logo with both icon and text -->
+        <a href="#hero" class="logo" tabindex="0">
+          <img src="assets/icons/logo.svg" alt="D&K Technical Services Logo" />
+          <span>D&K Technical Services</span>
+        </a>
         <button
           class="menu-toggle"
           aria-label="Toggle Navigation"
@@ -386,6 +118,7 @@
         <div class="container">
           <h2>Our Expertise</h2>
           <div class="service-items">
+            <!-- Service Items -->
             <div class="service">
               <img
                 loading="lazy"
@@ -416,7 +149,7 @@
             <div class="service">
               <img
                 loading="lazy"
-                src="https://images.unsplash.com/9/barcelona-boardwalk.jpg?q=80&w=1280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src="https://images.unsplash.com/9/barcelona-boardwalk.jpg?q=80&w=1280&auto=format&fit=crop&ixlib=rb-4.0.3"
                 alt="Premium decking installation"
               />
               <h3>Decking</h3>
@@ -425,7 +158,7 @@
             <div class="service">
               <img
                 loading="lazy"
-                src="https://images.unsplash.com/photo-1573233216827-cdc6a3dd01fa?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src="https://images.unsplash.com/photo-1573233216827-cdc6a3dd01fa?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3"
                 alt="Elegant ceiling design"
               />
               <h3>Ceiling</h3>
@@ -434,10 +167,9 @@
               </p>
             </div>
             <div class="service">
-              <!-- Updated service from Painting to Gypsum Work -->
               <img
                 loading="lazy"
-                src="https://images.unsplash.com/photo-1582203423341-64b918240e25?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src="https://images.unsplash.com/photo-1582203423341-64b918240e25?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3"
                 alt="Expert gypsum work"
               />
               <h3>Gypsum Work</h3>
@@ -454,34 +186,35 @@
         <div class="container">
           <h2>Our Portfolio</h2>
           <div class="portfolio-grid">
+            <!-- Portfolio Items -->
             <img
               loading="lazy"
-              src="https://images.unsplash.com/photo-1579254216656-3c0c16a3bdd6?q=80&w=3028&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src="https://images.unsplash.com/photo-1579254216656-3c0c16a3bdd6?q=80&w=3028&auto=format&fit=crop&ixlib=rb-4.0.3"
               alt="Luxury Wedding Gala in Downtown Dubai"
             />
             <img
               loading="lazy"
-              src="https://images.unsplash.com/photo-1600401270469-70d442209efb?q=80&w=3009&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src="https://images.unsplash.com/photo-1600401270469-70d442209efb?q=80&w=3009&auto=format&fit=crop&ixlib=rb-4.0.3"
               alt="Corporate Conference Extravaganza"
             />
             <img
               loading="lazy"
-              src="https://images.unsplash.com/photo-1608434904164-c8447262aa0d?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src="https://images.unsplash.com/photo-1608434904164-c8447262aa0d?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3"
               alt="Modern Art Exhibition"
             />
             <img
               loading="lazy"
-              src="https://images.unsplash.com/photo-1677836292241-42a980172dd9?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src="https://images.unsplash.com/photo-1677836292241-42a980172dd9?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3"
               alt="Desert Outdoor Festival"
             />
             <img
               loading="lazy"
-              src="https://images.unsplash.com/photo-1636909801584-0816a6937da3?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src="https://images.unsplash.com/photo-1636909801584-0816a6937da3?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3"
               alt="Grand Hotel Opening"
             />
             <img
               loading="lazy"
-              src="https://images.unsplash.com/photo-1715094856278-8685237e0189?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src="https://images.unsplash.com/photo-1715094856278-8685237e0189?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3"
               alt="Rooftop Soirée Under the Dubai Skyline"
             />
           </div>
@@ -529,7 +262,6 @@
       if ("scrollRestoration" in history) {
         history.scrollRestoration = "manual";
       }
-
       // Mobile Navigation Toggle
       const menuToggle = document.querySelector(".menu-toggle");
       const nav = document.querySelector("nav");
@@ -537,7 +269,6 @@
         const isActive = nav.classList.toggle("active");
         menuToggle.setAttribute("aria-expanded", isActive);
       });
-
       // Back to Top Button Functionality
       const backToTop = document.getElementById("backToTop");
       window.addEventListener("scroll", () => {

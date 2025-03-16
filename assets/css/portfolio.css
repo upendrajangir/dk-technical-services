@@ -1,0 +1,25 @@
+/* portfolio.css */
+.portfolio {
+    text-align: center;
+    animation: fadeIn 1.5s ease-in;
+  }
+  .portfolio h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .portfolio-grid img {
+    border-radius: 8px;
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+    transition: transform var(--transition-speed);
+  }
+  .portfolio-grid img:hover {
+    transform: scale(1.05);
+  }
+  
