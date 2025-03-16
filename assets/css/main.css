@@ -24,20 +24,54 @@
   position: fixed;
   bottom: 30px;
   right: 30px;
-  background: var(--primary-color);
-  color: #fff;
-  padding: 0.5rem 1rem;
+  background: #fff; /* white background for contrast */
+  color: var(--primary-color); /* primary color text */
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
   border: none;
   border-radius: 50px;
   cursor: pointer;
   opacity: 0;
   visibility: hidden;
-  transition: opacity var(--transition-speed), visibility var(--transition-speed);
-  z-index: 100;
+  transition: opacity 0.3s ease, visibility 0.3s ease, background 0.3s ease,
+    color 0.3s ease, transform 0.3s ease;
+  z-index: 200;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
+
 #backToTop.show {
   opacity: 1;
   visibility: visible;
+  animation: bounce 0.5s ease;
+}
+
+#backToTop:hover {
+  background: var(--primary-color);
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Optional Bounce Animation */
+@keyframes bounce {
+  0% {
+    transform: translateY(20px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Adjustments for Small Screens */
+@media (max-width: 480px) {
+  #backToTop {
+    bottom: 20px;
+    right: 20px;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
 }
 
 /* Fade In Animation */
