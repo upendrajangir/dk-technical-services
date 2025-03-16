@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>D&K Technical Services</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/ui/D&K.svg" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* CSS Variables for theming */
+      :root {
+        --primary-color: #000;
+        --secondary-color: #444;
+        --bg-light: #f9f9f9;
+        --bg-accent: #f1f1f1;
+        --font-color: #333;
+        --transition-speed: 0.3s;
+      }
+
+      /* Global Reset & Base Styles */
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Montserrat", sans-serif;
+        color: var(--font-color);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+
+      /* Header & Navigation */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: linear-gradient(
+          90deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        color: #fff;
+        padding: 1rem 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        animation: fadeIn 1s ease-in;
+      }
+      header .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .logo {
+        font-size: 1.7rem;
+        font-weight: 650;
+        cursor: pointer;
+      }
+      .logo:hover,
+      .logo:focus {
+        opacity: 0.8;
+      }
+      nav {
+        position: relative;
+      }
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 1.5rem;
+      }
+      .nav-links li a {
+        font-size: 1.2rem;
+        transition: color var(--transition-speed);
+      }
+      .nav-links li a:hover,
+      .nav-links li a:focus {
+        color: #ddd;
+      }
+      .menu-toggle {
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 1.5rem;
+        cursor: pointer;
+        display: block;
+      }
+
+      /* Mobile Navigation */
+      @media (max-width: 767px) {
+        nav {
+          position: absolute;
+          top: 100%;
+          right: 0;
+          background: var(--primary-color);
+          width: 200px;
+          transform: translateY(-20px);
+          opacity: 0;
+          visibility: hidden;
+          transition: opacity var(--transition-speed) ease,
+            transform var(--transition-speed) ease;
+        }
+        nav.active {
+          transform: translateY(0);
+          opacity: 1;
+          visibility: visible;
+        }
+        .nav-links {
+          flex-direction: column;
+          padding: 1rem;
+        }
+      }
+
+      /* Hero Section */
+      .hero {
+        position: relative;
+        height: 60vh;
+        background: url("https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80")
+          center center/cover no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        animation: fadeIn 2s ease-in;
+      }
+      .hero::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.5);
+      }
+      .hero h1 {
+        position: relative;
+        color: #fff;
+        font-size: 2.5rem;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+      }
+
+      /* Main Sections */
+      main {
+        /* Main content wrapper */
+      }
+      section {
+        padding: 2rem 0;
+      }
+
+      /* Services Section */
+      .services {
+        background: var(--bg-light);
+        text-align: center;
+        animation: fadeIn 1.5s ease-in;
+      }
+      .services h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+      }
+      .service-items {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+      .service {
+        background: #fff;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: transform var(--transition-speed);
+      }
+      .service:hover {
+        transform: translateY(-5px);
+      }
+      .service img {
+        border-radius: 8px;
+        height: 200px;
+        object-fit: cover;
+        width: 100%;
+      }
+      .service h3 {
+        margin-top: 1rem;
+        font-size: 1.5rem;
+      }
+
+      /* Portfolio Section */
+      .portfolio {
+        text-align: center;
+        animation: fadeIn 1.5s ease-in;
+      }
+      .portfolio h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+      }
+      .portfolio-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .portfolio-grid img {
+        border-radius: 8px;
+        height: 200px;
+        object-fit: cover;
+        width: 100%;
+        transition: transform var(--transition-speed);
+      }
+      .portfolio-grid img:hover {
+        transform: scale(1.05);
+      }
+
+      /* Contact Section */
+      .contact {
+        background: var(--bg-accent);
+        text-align: center;
+        animation: fadeIn 1.5s ease-in;
+      }
+      .contact h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+      .contact p {
+        margin-bottom: 1rem;
+      }
+      .contact a.button {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        background: var(--primary-color);
+        color: #fff;
+        border-radius: 5px;
+        transition: background var(--transition-speed);
+      }
+      .contact a.button:hover,
+      .contact a.button:focus {
+        background: var(--secondary-color);
+      }
+
+      /* WhatsApp Links Container */
+      .whatsapp-links {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      /* Footer */
+      footer {
+        background: var(--primary-color);
+        color: #fff;
+        text-align: center;
+        padding: 1rem 0;
+        animation: fadeIn 1s ease-in;
+      }
+
+      /* Back to Top Button */
+      #backToTop {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background: var(--primary-color);
+        color: #fff;
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity var(--transition-speed),
+          visibility var(--transition-speed);
+        z-index: 100;
+      }
+      #backToTop.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      /* Fade In Animation */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Reduce motion for users with motion sensitivity */
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation-duration: 0.001ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.001ms !important;
+        }
+      }
+
+      /* Responsive Styles */
+      @media (min-width: 768px) {
+        .menu-toggle {
+          display: none;
+        }
+        nav {
+          position: static;
+          transform: none;
+          opacity: 1;
+          visibility: visible;
+        }
+        .nav-links {
+          flex-direction: row;
+        }
+        /* Use CSS Grid for 3 services per row */
+        .service-items {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 2rem;
+        }
+        .portfolio-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (min-width: 1024px) {
+        .portfolio-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .hero h1 {
+          font-size: 3rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <!-- Clickable logo to scroll to top -->
+        <a href="#hero" class="logo" tabindex="0">D&K Technical Services</a>
+        <button
+          class="menu-toggle"
+          aria-label="Toggle Navigation"
+          aria-expanded="false"
+        >
+          &#9776;
+        </button>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Hero Section -->
+      <section class="hero" id="hero">
+        <h1>Crafting Unforgettable Spaces in Dubai</h1>
+      </section>
+
+      <!-- Services Section -->
+      <section class="services" id="services">
+        <div class="container">
+          <h2>Our Expertise</h2>
+          <div class="service-items">
+            <div class="service">
+              <img
+                loading="lazy"
+                src="https://plus.unsplash.com/premium_photo-1676823553207-758c7a66e9bb?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3"
+                alt="High-quality flooring solutions"
+              />
+              <h3>Flooring</h3>
+              <p>High-quality flooring solutions to transform your space.</p>
+            </div>
+            <div class="service">
+              <img
+                loading="lazy"
+                src="https://images.unsplash.com/photo-1659612534697-3edc1892db46?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.0.3"
+                alt="Innovative lighting design"
+              />
+              <h3>Lighting</h3>
+              <p>Innovative lighting designs to create the perfect ambiance.</p>
+            </div>
+            <div class="service">
+              <img
+                loading="lazy"
+                src="https://images.unsplash.com/photo-1577539403572-7476ebfe18f7?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3"
+                alt="Stunning stage setups"
+              />
+              <h3>Stages &amp; Events</h3>
+              <p>Stunning stage setups that captivate your audience.</p>
+            </div>
+            <div class="service">
+              <img
+                loading="lazy"
+                src="https://images.unsplash.com/9/barcelona-boardwalk.jpg?q=80&w=1280&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Premium decking installation"
+              />
+              <h3>Decking</h3>
+              <p>Premium decking solutions for stylish outdoor spaces.</p>
+            </div>
+            <div class="service">
+              <img
+                loading="lazy"
+                src="https://images.unsplash.com/photo-1573233216827-cdc6a3dd01fa?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Elegant ceiling design"
+              />
+              <h3>Ceiling</h3>
+              <p>
+                Elegant ceiling designs to enhance your interior aesthetics.
+              </p>
+            </div>
+            <div class="service">
+              <!-- Updated service from Painting to Gypsum Work -->
+              <img
+                loading="lazy"
+                src="https://images.unsplash.com/photo-1582203423341-64b918240e25?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Expert gypsum work"
+              />
+              <h3>Gypsum Work</h3>
+              <p>
+                Expert gypsum work for seamless finishes and stylish partitions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Portfolio Section -->
+      <section class="portfolio" id="portfolio">
+        <div class="container">
+          <h2>Our Portfolio</h2>
+          <div class="portfolio-grid">
+            <img
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1579254216656-3c0c16a3bdd6?q=80&w=3028&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Luxury Wedding Gala in Downtown Dubai"
+            />
+            <img
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1600401270469-70d442209efb?q=80&w=3009&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Corporate Conference Extravaganza"
+            />
+            <img
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1608434904164-c8447262aa0d?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Modern Art Exhibition"
+            />
+            <img
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1677836292241-42a980172dd9?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Desert Outdoor Festival"
+            />
+            <img
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1636909801584-0816a6937da3?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Grand Hotel Opening"
+            />
+            <img
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1715094856278-8685237e0189?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Rooftop Soirée Under the Dubai Skyline"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="contact" id="contact">
+        <div class="container">
+          <h2>Get in Touch</h2>
+          <p>Interested in our services? Reach out to us on WhatsApp!</p>
+          <div class="whatsapp-links">
+            <a
+              href="https://wa.me/971556312319?text=Hello%20Devkaran!"
+              target="_blank"
+              class="button"
+            >
+              Contact Devkaran via WhatsApp
+            </a>
+            <a
+              href="https://wa.me/971522500819?text=Hello%20Balraj!"
+              target="_blank"
+              class="button"
+            >
+              Contact Balraj via WhatsApp
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 D&K Technical Services. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" aria-label="Back to top">&#8679;</button>
+
+    <!-- JavaScript -->
+    <script>
+      // Disable scroll restoration so page always loads from the top
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
+
+      // Mobile Navigation Toggle
+      const menuToggle = document.querySelector(".menu-toggle");
+      const nav = document.querySelector("nav");
+      menuToggle.addEventListener("click", () => {
+        const isActive = nav.classList.toggle("active");
+        menuToggle.setAttribute("aria-expanded", isActive);
+      });
+
+      // Back to Top Button Functionality
+      const backToTop = document.getElementById("backToTop");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          backToTop.classList.add("show");
+        } else {
+          backToTop.classList.remove("show");
+        }
+      });
+      backToTop.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
+  </body>
+</html>
